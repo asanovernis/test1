@@ -1,0 +1,29 @@
+<% @title="Internation Relations Department | IAAU" %>
+
+<div id="wrapper" class='slide-cont'>
+
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <img src="<%= asset_path( 'slide/1.jpg' ) %>" data-thumb="<%= asset_path( 'slide/1.jpg' ) %>" alt=""/>
+            <img src="<%= asset_path( 'slide/2.jpg' ) %>" data-thumb="<%= asset_path( 'slide/2.jpg' ) %>" alt="" title=""/>
+            <img src="<%= asset_path( 'slide/3.jpg' ) %>" data-thumb="<%= asset_path( 'slide/3.jpg' ) %>" alt="" title=""/>
+        </div>
+    </div>
+</div>
+
+<h2>Recent News</h2>
+<% counter = 0;
+   getAllNews.each do |row|  counter+=1
+   if counter <= 10  %>
+
+        <div class="home-news-cont">
+          <h4><a href='/news/<%=row['id']%>'><%=row['title']%></a></h4>
+          <div class="home-news-short">
+            <%=row['text']%>
+          </div>
+          <div class="home-news-date">
+            <small><i><%=row['date_']%></i></small>
+          </div>
+        </div>
+    <%end %>
+<%end %>
